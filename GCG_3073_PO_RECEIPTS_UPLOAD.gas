@@ -1,0 +1,340 @@
+Program.Sub.ScreenSU.Start
+gui.F_PO_RECEIPTS..create
+gui.F_PO_RECEIPTS..caption("PO Receipts Upload")
+gui.F_PO_RECEIPTS..size(6840,6570)
+gui.F_PO_RECEIPTS..position(0,0)
+gui.F_PO_RECEIPTS..event(unload,f_po_receipts_unload)
+gui.F_PO_RECEIPTS..alwaysontop(False)
+gui.F_PO_RECEIPTS..fontname("Arial")
+gui.F_PO_RECEIPTS..fontsize(8)
+gui.F_PO_RECEIPTS..forecolor(0)
+gui.F_PO_RECEIPTS..fontstyle(,,,,)
+gui.F_PO_RECEIPTS..BackColor(-2147483633)
+gui.F_PO_RECEIPTS..controlbox(True)
+gui.F_PO_RECEIPTS..maxbutton(True)
+gui.F_PO_RECEIPTS..minbutton(True)
+gui.F_PO_RECEIPTS..mousepointer(0)
+gui.F_PO_RECEIPTS..moveable(True)
+gui.F_PO_RECEIPTS..sizeable(True)
+gui.F_PO_RECEIPTS..ShowInTaskBar(True)
+gui.F_PO_RECEIPTS..titlebar(True)
+gui.F_PO_RECEIPTS.lblPONum.create(label,"",True,1260,255,1,1505,200,True,0,Arial,8,-2147483633,0)
+gui.F_PO_RECEIPTS.lblPONum.defaultvalue("")
+gui.F_PO_RECEIPTS.lblPONum.controlgroup(0)
+gui.F_PO_RECEIPTS.lblPurchaseOrder.create(label,"Purchase Order: ",True,1200,255,1,200,200,True,0,Arial,8,-2147483633,0)
+gui.F_PO_RECEIPTS.lblPurchaseOrder.defaultvalue("")
+gui.F_PO_RECEIPTS.lblPurchaseOrder.controlgroup(0)
+gui.F_PO_RECEIPTS.lblPartNumber.create(label,"Part Number: ",True,960,255,1,200,460,True,0,Arial,8,-2147483633,0)
+gui.F_PO_RECEIPTS.lblPartNumber.defaultvalue("")
+gui.F_PO_RECEIPTS.lblPartNumber.controlgroup(0)
+gui.F_PO_RECEIPTS.lblPartNum.create(label,"",True,1935,255,1,1225,460,True,0,Arial,8,-2147483633,0)
+gui.F_PO_RECEIPTS.lblPartNum.defaultvalue("")
+gui.F_PO_RECEIPTS.lblPartNum.controlgroup(0)
+gui.F_PO_RECEIPTS.lblQtyRecv.create(label,"Quantity Received: ",True,1410,255,1,200,880,True,0,Arial,8,-2147483633,0)
+gui.F_PO_RECEIPTS.lblQtyRecv.defaultvalue("")
+gui.F_PO_RECEIPTS.lblQtyRecv.controlgroup(0)
+gui.F_PO_RECEIPTS.txtQtyRec.create(textbox,"",True,2025,300,0,1645,795,True,0,Arial,8,-2147483643,1)
+gui.F_PO_RECEIPTS.txtQtyRec.numericonly(1)
+gui.F_PO_RECEIPTS.txtQtyRec.defaultvalue("")
+gui.F_PO_RECEIPTS.txtQtyRec.controlgroup(0)
+gui.F_PO_RECEIPTS.lblQuantityRej.create(label,"Quantity Rejected: ",True,1335,255,1,200,1325,True,0,Arial,8,-2147483633,0)
+gui.F_PO_RECEIPTS.lblQuantityRej.defaultvalue("")
+gui.F_PO_RECEIPTS.lblQuantityRej.controlgroup(0)
+gui.F_PO_RECEIPTS.txtQtyRej.create(textbox,"",True,2025,300,0,1645,1230,True,0,Arial,8,-2147483643,1)
+gui.F_PO_RECEIPTS.txtQtyRej.numericonly(1)
+gui.F_PO_RECEIPTS.txtQtyRej.defaultvalue("")
+gui.F_PO_RECEIPTS.txtQtyRej.controlgroup(0)
+gui.F_PO_RECEIPTS.lblLot.create(label,"Lot: ",True,345,255,1,200,1775,True,0,Arial,8,-2147483633,0)
+gui.F_PO_RECEIPTS.lblLot.defaultvalue("")
+gui.F_PO_RECEIPTS.lblLot.controlgroup(0)
+gui.F_PO_RECEIPTS.txtLot.create(textbox,"",True,1215,300,0,700,1690,True,0,Arial,8,-2147483643,1)
+gui.F_PO_RECEIPTS.txtLot.defaultvalue("")
+gui.F_PO_RECEIPTS.txtLot.controlgroup(0)
+gui.F_PO_RECEIPTS.lblBin.create(label,"Bin: ",True,315,255,1,200,2245,True,0,Arial,8,-2147483633,0)
+gui.F_PO_RECEIPTS.lblBin.defaultvalue("")
+gui.F_PO_RECEIPTS.lblBin.controlgroup(0)
+gui.F_PO_RECEIPTS.txtBIN.create(textbox,"",True,1215,300,0,700,2160,True,0,Arial,8,-2147483643,1)
+gui.F_PO_RECEIPTS.txtBIN.defaultvalue("")
+gui.F_PO_RECEIPTS.txtBIN.controlgroup(0)
+gui.F_PO_RECEIPTS.lblHeat.create(label,"Heat: ",True,390,195,1,200,2705,True,0,Arial,8,-2147483633,0)
+gui.F_PO_RECEIPTS.lblHeat.defaultvalue("")
+gui.F_PO_RECEIPTS.lblHeat.controlgroup(0)
+gui.F_PO_RECEIPTS.txtHEAT.create(textbox,"",True,1215,300,0,700,2630,True,0,Arial,8,-2147483643,1)
+gui.F_PO_RECEIPTS.txtHEAT.defaultvalue("")
+gui.F_PO_RECEIPTS.txtHEAT.controlgroup(0)
+gui.F_PO_RECEIPTS.lblSerial.create(label,"Serial: ",True,435,300,1,200,3170,True,0,Arial,8,-2147483633,0)
+gui.F_PO_RECEIPTS.lblSerial.defaultvalue("")
+gui.F_PO_RECEIPTS.lblSerial.controlgroup(0)
+gui.F_PO_RECEIPTS.txtSERIAL.create(textbox,"",True,1215,300,0,700,3075,True,0,Arial,8,-2147483643,1)
+gui.F_PO_RECEIPTS.txtSERIAL.event(lostfocus,txtserial_lostfocus)
+gui.F_PO_RECEIPTS.txtSERIAL.defaultvalue("")
+gui.F_PO_RECEIPTS.txtSERIAL.controlgroup(0)
+gui.F_PO_RECEIPTS.lblRecvrExtraText.create(label,"Receiver Extra Text",True,1935,240,1,200,3600,True,0,Arial,8,-2147483633,0)
+gui.F_PO_RECEIPTS.lblRecvrExtraText.defaultvalue("")
+gui.F_PO_RECEIPTS.lblRecvrExtraText.controlgroup(0)
+gui.F_PO_RECEIPTS.btnCancel.create(button)
+gui.F_PO_RECEIPTS.btnCancel.caption("Cancel")
+gui.F_PO_RECEIPTS.btnCancel.visible(True)
+gui.F_PO_RECEIPTS.btnCancel.size(855,330)
+gui.F_PO_RECEIPTS.btnCancel.zorder(0)
+gui.F_PO_RECEIPTS.btnCancel.position(200,5520)
+gui.F_PO_RECEIPTS.btnCancel.enabled(True)
+gui.F_PO_RECEIPTS.btnCancel.fontname("Arial")
+gui.F_PO_RECEIPTS.btnCancel.fontsize(8)
+gui.F_PO_RECEIPTS.btnCancel.event(click,btncancel_click)
+gui.F_PO_RECEIPTS.btnCancel.defaultvalue("")
+gui.F_PO_RECEIPTS.btnCancel.controlgroup(0)
+gui.F_PO_RECEIPTS.btnSave.create(button)
+gui.F_PO_RECEIPTS.btnSave.caption("Save Line")
+gui.F_PO_RECEIPTS.btnSave.visible(True)
+gui.F_PO_RECEIPTS.btnSave.size(855,375)
+gui.F_PO_RECEIPTS.btnSave.zorder(0)
+gui.F_PO_RECEIPTS.btnSave.position(2205,5470)
+gui.F_PO_RECEIPTS.btnSave.enabled(True)
+gui.F_PO_RECEIPTS.btnSave.fontname("Arial")
+gui.F_PO_RECEIPTS.btnSave.fontsize(8)
+gui.F_PO_RECEIPTS.btnSave.event(click,btnsave_click)
+gui.F_PO_RECEIPTS.btnSave.defaultvalue("")
+gui.F_PO_RECEIPTS.btnSave.controlgroup(0)
+gui.F_PO_RECEIPTS.btnSkip.create(button)
+gui.F_PO_RECEIPTS.btnSkip.caption("Skip")
+gui.F_PO_RECEIPTS.btnSkip.visible(True)
+gui.F_PO_RECEIPTS.btnSkip.size(855,375)
+gui.F_PO_RECEIPTS.btnSkip.zorder(0)
+gui.F_PO_RECEIPTS.btnSkip.position(3440,5480)
+gui.F_PO_RECEIPTS.btnSkip.enabled(True)
+gui.F_PO_RECEIPTS.btnSkip.fontname("Arial")
+gui.F_PO_RECEIPTS.btnSkip.fontsize(8)
+gui.F_PO_RECEIPTS.btnSkip.event(click,btnskip_click)
+gui.F_PO_RECEIPTS.btnSkip.defaultvalue("")
+gui.F_PO_RECEIPTS.btnSkip.controlgroup(0)
+gui.F_PO_RECEIPTS.mltxtExtraText.create(textboxm)
+gui.F_PO_RECEIPTS.mltxtExtraText.text("")
+gui.F_PO_RECEIPTS.mltxtExtraText.visible(True)
+gui.F_PO_RECEIPTS.mltxtExtraText.size(6180,1485)
+gui.F_PO_RECEIPTS.mltxtExtraText.zorder(0)
+gui.F_PO_RECEIPTS.mltxtExtraText.position(200,3900)
+gui.F_PO_RECEIPTS.mltxtExtraText.enabled(True)
+gui.F_PO_RECEIPTS.mltxtExtraText.alignment(0)
+gui.F_PO_RECEIPTS.mltxtExtraText.fontname("Arial")
+gui.F_PO_RECEIPTS.mltxtExtraText.fontsize(8)
+gui.F_PO_RECEIPTS.mltxtExtraText.BackColor(-2147483643)
+gui.F_PO_RECEIPTS.mltxtExtraText.defaultvalue("")
+gui.F_PO_RECEIPTS.mltxtExtraText.controlgroup(0)
+gui.F_PO_RECEIPTS.btnProcess.create(button)
+gui.F_PO_RECEIPTS.btnProcess.caption("Process")
+gui.F_PO_RECEIPTS.btnProcess.visible(True)
+gui.F_PO_RECEIPTS.btnProcess.size(1125,375)
+gui.F_PO_RECEIPTS.btnProcess.zorder(0)
+gui.F_PO_RECEIPTS.btnProcess.position(5245,5475)
+gui.F_PO_RECEIPTS.btnProcess.enabled(True)
+gui.F_PO_RECEIPTS.btnProcess.fontname("Arial")
+gui.F_PO_RECEIPTS.btnProcess.fontsize(8)
+gui.F_PO_RECEIPTS.btnProcess.event(click,btnprocess_click)
+gui.F_PO_RECEIPTS.btnProcess.defaultvalue("")
+gui.F_PO_RECEIPTS.btnProcess.controlgroup(0)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.Global.sQuery.Declare(String)
+Variable.UDT.POReceipts.Define("RecordNumber",String,RECORD_NO)
+Variable.UDT.POReceipts.Define("Cost",Float,COST)
+Variable.UDT.POReceipts.Define("PONumber",String,PURCHASE_ORDER)
+Variable.UDT.POReceipts.Define("Part",String,PART)
+Variable.UDT.POReceipts.Define("QuantityOrder",Float,QTY_ORDER)
+Variable.UDT.POReceipts.Define("JOB",String,JOB)
+Variable.UDT.POReceipts.Define("Suffix",String,SUFFIX)
+Variable.UDT.POReceipts.Define("Sequence",String,SEQUENCE)
+Variable.uGlobal.uPOReceipts.Declare("POReceipts")
+Variable.Global.iUDTRowCount.Declare(Long,0)
+Variable.Global.sFileName.Declare(String)
+Variable.Global.sUplFile.Declare(String)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'TSP 1/7/15
+'Allows the user to alter upload details on PO Receipts
+V.Local.sPONumber.Declare
+V.Local.sFindFile.Declare
+V.Local.sError.Declare
+V.Local.bExists.Declare
+
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+F.Intrinsic.Control.SelectCase(V.Caller.Hook)
+	F.Intrinsic.Control.Case(15020)
+		V.Passed.000242.Set("PO Recpt")
+	F.Intrinsic.Control.Case(15050)
+		F.Intrinsic.Control.If(V.Passed.000002,=,0)
+			F.Intrinsic.Control.Exitsub
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Concat("P",V.Caller.CompanyCode,"PORcpt",V.Global.sFileName)
+			F.Intrinsic.String.Concat(V.Global.sFileName,".txt",V.Global.sUplFile)
+			F.Intrinsic.String.Concat(V.Caller.FilesDir,"\",V.Global.sFileName,".txt",V.Local.sFindFile)
+			F.Intrinsic.File.Exists(V.Local.sFindFile,V.Local.bExists)
+			F.Intrinsic.Control.If(V.Local.bExists,=,True)
+				F.Intrinsic.File.DeleteFile(V.Local.sFindFile)
+			F.Intrinsic.Control.EndIF
+			F.Intrinsic.String.LPad(V.Passed.000002,"0",7,V.Local.sPONumber)
+			F.Intrinsic.String.Concat("SELECT PURCHASE_ORDER, RECORD_NO, COST, PART,  JOB, QTY_ORDER, SEQUENCE, SUFFIX FROM PO_LINES WHERE PURCHASE_ORDER = '",V.Local.sPONumber,"' AND PO_TYPE = 'O'","",V.Global.sQuery)
+			F.ODBC.Connection!conx.OpenRecordsetRO("rstPOData",V.Global.sQuery)
+			F.Intrinsic.Variable.LoadUDTFromRecordset("Conx","rstPOData","uGlobal.uPOReceipts","False",10)
+			F.ODBC.conx!rstPOData.Close
+			F.Intrinsic.Control.CallSub(Fillform)
+			Gui.F_PO_RECEIPTS.txtQtyRec.SetFocus
+			F.Intrinsic.Control.If(V.uGlobal.uPOReceipts.UBound,=,0)
+				Gui.F_PO_RECEIPTS.btnSkip.Enabled(False)
+			F.Intrinsic.Control.EndIF
+			Gui.F_PO_RECEIPTS..Show
+		F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndSelect
+
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_PO_RECEIPTS_UPLOAD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Main.End
+
+program.sub.btncancel_click.start
+F.Intrinsic.Control.End
+
+program.sub.btncancel_click.end
+
+program.sub.f_po_receipts_unload.start
+F.Intrinsic.Control.End
+
+program.sub.f_po_receipts_unload.end
+
+program.sub.btnsave_click.start
+V.Local.sText.Declare
+V.Local.sReveiveDate.Declare
+V.Local.sClosedFlag.Declare
+V.Local.sPOLine.Declare
+V.Local.sError.Declare
+F.Intrinsic.Control.SetErrorHandler("Save_Err")
+F.Intrinsic.Control.ClearErrors
+
+F.Intrinsic.Control.If(V.Screen.F_PO_RECEIPTS!txtQtyRec.Text,=,"")
+	F.Intrinsic.UI.Msgbox("Please enter a quantity received amount before saving.")
+F.Intrinsic.Control.Else
+	V.Local.sPOLine.Set(V.uGlobal.uPOReceipts(V.Global.iUDTRowCount)!RecordNumber)
+	F.Intrinsic.String.Left(V.Local.sPOLine,3,V.Local.sPOLine)
+	F.Intrinsic.String.Concat(V.uGlobal.uPOReceipts(V.Global.iUDTRowCount)!PONumber,",",V.Local.sPOLine,",",V.Screen.F_PO_RECEIPTS!txtBIN.Text,V.Local.sText)
+	F.Intrinsic.String.Concat(V.Local.sText,",",V.Screen.F_PO_RECEIPTS!txtLot.Text,",",V.Screen.F_PO_RECEIPTS!txtHEAT.Text,",",V.Screen.F_PO_RECEIPTS!txtSERIAL.Text,V.Local.sText)
+	F.Intrinsic.String.Format(V.Ambient.date,"YYMMDD",V.Local.sReveiveDate)
+	F.Intrinsic.String.Concat(V.Local.sText,",",V.Local.sReveiveDate,",",V.Screen.F_PO_RECEIPTS!txtQtyRec.Text,",,",V.uGlobal.uPOReceipts(V.Global.iUDTRowCount)!Cost,V.Local.sText)
+	F.Intrinsic.Control.If(V.uGlobal.uPOReceipts(V.Global.iUDTRowCount)!QuantityOrder,=,V.Screen.F_PO_RECEIPTS!txtQtyRec.Text)
+		V.Local.sClosedFlag.Set("Y")
+	F.Intrinsic.Control.Else
+		V.Local.sClosedFlag.Set("N")
+	F.Intrinsic.Control.EndIF
+	F.Intrinsic.Control.If(V.uGlobal.uPOReceipts(V.Global.iUDTRowCount)!JOB.Length,>,0)
+		F.Intrinsic.String.Concat(V.Local.sText,",",V.Local.sClosedFlag,",",V.uGlobal.uPOReceipts(V.Global.iUDTRowCount)!JOB,",",V.uGlobal.uPOReceipts(V.Global.iUDTRowCount)!Suffix,",",V.uGlobal.uPOReceipts(V.Global.iUDTRowCount)!Sequence,V.Local.sText)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat(V.Local.sText,",",V.Local.sClosedFlag,",,,",V.Local.sText)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Concat(V.Local.sText,",,",V.Screen.F_PO_RECEIPTS!mltxtExtraText.Text,",,,,,,",V.Screen.F_PO_RECEIPTS!txtQtyRej.Text,",,,",V.Local.sText)
+
+	F.Intrinsic.Control.CallSub(Writetofile,"sText",V.Local.sText,"bFirst",False,"sSub",V.Global.sFileName)
+	F.Intrinsic.Control.If(V.Global.iUDTRowCount,<,V.uGlobal.uPOReceipts.UBound)
+		F.Intrinsic.Control.CallSub(Btnskip_click)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.CallSub(Clearfields)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.Label("Save_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_PO_RECEIPTS_UPLOAD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+Function.Intrinsic.Control.EndIf
+
+program.sub.btnsave_click.end
+
+program.sub.btnskip_click.start
+F.Intrinsic.Math.Add(V.Global.iUDTRowCount,1,V.Global.iUDTRowCount)
+F.Intrinsic.Control.CallSub(Clearfields)
+
+F.Intrinsic.Control.If(V.Global.iUDTRowCount,=,V.uGlobal.uPOReceipts.UBound)
+	Gui.F_PO_RECEIPTS.btnSkip.Enabled(FALSE)
+	F.Intrinsic.Control.CallSub(Fillform)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.CallSub(Fillform)
+F.Intrinsic.Control.EndIf
+
+program.sub.btnskip_click.end
+
+Program.Sub.FillForm.Start
+V.Local.sPONumber.Declare
+
+F.Intrinsic.String.LPad(V.Passed.000002,"0",7,V.Local.sPONumber)
+Gui.F_PO_RECEIPTS.lblPONum.Caption(V.Local.sPONumber)
+Gui.F_PO_RECEIPTS.lblPartNum.Caption(V.uGlobal.uPOReceipts(V.Global.iUDTRowCount)!Part)
+
+
+Program.Sub.FillForm.End
+
+Program.Sub.WriteToFile.Start
+V.Local.iHdl.Declare(Long)
+V.Local.sFile.Declare(String)
+V.Local.sLine.Declare(String)
+V.Local.sFileN.Declare(String)
+
+V.Local.sFileN.Set(V.Args.sSub)
+F.Intrinsic.File.GetHandle(V.Local.iHdl)
+F.Intrinsic.String.Concat(V.Caller.FilesDir,"\",V.Local.sFileN,".txt",V.Local.sFile)
+F.Intrinsic.Control.If(V.Args.bFirst,=,"True")
+    F.Intrinsic.File.OpenForWrite(V.Local.sFile,V.Local.iHdl)
+F.Intrinsic.Control.Else
+    F.Intrinsic.File.OpenForAppend(V.Local.sFile,V.Local.iHdl)
+F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.String.Concat(V.Ambient.NewLine,V.Args.sText,V.local.sLine)
+V.Local.sLine.Set(V.Args.sText)
+F.Intrinsic.String.Trim(V.Local.sLine,V.Local.sLine)
+
+F.Intrinsic.File.WriteLine(V.Local.iHdl,V.local.sLine)
+
+F.Intrinsic.File.CloseFile(V.Local.iHdl)
+
+Program.Sub.WriteToFile.End
+
+Program.Sub.ClearFields.Start
+Gui.F_PO_RECEIPTS.txtBIN.Text("")
+Gui.F_PO_RECEIPTS.txtHEAT.Text("")
+Gui.F_PO_RECEIPTS.txtLot.Text("")
+Gui.F_PO_RECEIPTS.txtQtyRec.Text("")
+Gui.F_PO_RECEIPTS.txtQtyRej.Text("")
+Gui.F_PO_RECEIPTS.txtSERIAL.Text("")
+Gui.F_PO_RECEIPTS.mltxtExtraText.Text("")
+
+Program.Sub.ClearFields.End
+
+program.sub.btnprocess_click.start
+Gui.F_PO_RECEIPTS..Visible(FALSE)
+F.Global.General.CallWrappersync(6016,V.Global.sUplFile)
+F.Intrinsic.Control.End
+
+program.sub.btnprocess_click.end
+
+program.sub.txtserial_lostfocus.start
+Gui.F_PO_RECEIPTS.mltxtExtraText.SetFocus
+
+program.sub.txtserial_lostfocus.end
+
+Program.Sub.Comments.Start
+${$0$}$$}$TSP$}$12/10/2014 9:08:08 AM
+Program.Sub.Comments.End
+
